@@ -1,0 +1,24 @@
+#ifndef STANDARD_DATA_TYPES__H
+#define STANDARD_DATA_TYPES__H
+/* ======================================== MACROS ========================================*/
+#define NULL (void *) 0
+	
+#define STD_HIGH 	1;
+#define STD_LOW 	0;
+/* ======================================== CHAR ========================================*/
+typedef char u8;
+typedef signed char s8;
+/* ======================================== INT ========================================*/
+typedef unsigned short int u16;
+typedef signed short int s16;
+/* ======================================== LONG ========================================*/
+typedef int u32;
+typedef signed long int s32;
+
+typedef long long int u64;
+typedef signed long long int s64;
+/* ======================================== FLOAT & DOUBLE ========================================*/
+typedef float f32;
+typedef double f64;
+
+#endif /*STANDARD_DATA_TYPES__H*/

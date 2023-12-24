@@ -1,0 +1,123 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Khalid Ahmed, Faculty of Engineering, LIC=MGXAM-G49NI-ZCR5K-HNU7X-HDEA0-BXKNQ
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.39.0.0
+Toolchain Path:  D:\x86\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      UL2CM3.DLL V1.164.9.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\Faculty of Engineering\Level 3\1st term\Measurements\STM_Project\Our_Project\USART+Libraries\My_Project\Rx_Driver\Rx.uvprojx
+Project File Date:  12/24/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'D:\x86\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'App'
+main.c(8): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+    8 |                 char R_D;
+      |                      ^
+main.c(52): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   52 |                 USART2_CR1 &=~(1<<12);                          // 0:To Set word length to 1 start bit and 8 data bits
+      |                            ~~^~~~~~~~
+main.c(53): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   53 |     USART2_CR1 &=~(1<<10);                              // Set parity enable to zero to disable parity
+      |                ~~^~~~~~~~
+main.c(57): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   57 |                 USART2_CR2 &=~ (1<<13);                         // Set bit 12 and 13 as zero for 1 stop bit
+      |                            ~~^~~~~~~~~
+main.c(58): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   58 |     USART2_CR2 &=~ (1<<12);                     // Set bit 12 and 13 as zero for 1 stop bit
+      |                ~~^~~~~~~~~
+main.c(59): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   59 |     USART2_CR2 &=~ (1<<11);                     // Disable clock
+      |                ~~^~~~~~~~~
+main.c(62): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   62 |     USART2_CR3 &=~ (1<<3);                              // Half-duplex mode is disabled
+      |                ~~^~~~~~~~
+main.c(65): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+   65 |                 double USART_DIV = (double)System_Core_Clock / (8.0 * baudRate);
+      |                        ^
+main.c(137): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  137 |          TIM2_CR1 &=~ ((1<<5) | (1<<6) );                       // EDGE ALLIGNED MODE (UP OR DOWN ONLY) 
+      |                   ~~^~~~~~~~~~~~~~~~~~~~
+main.c(138): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  138 |          TIM2_CR1 &=~ (1<<4);                                                           // SET THE DIRECTION TO "UP" 
+      |                   ~~^~~~~~~~
+main.c(149): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  149 |          TIM2_CR1 &=~ (1<<0);                                                           // STOP THE COUNTER
+      |                   ~~^~~~~~~~
+main.c(147): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  147 |          unsigned int target = TIM2_CNT + delay;
+      |                       ^
+main.c(92): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   92 |         BUFFER[i] = USART2_DR & 0xFF;                     // buffer[i] = USART1->DR; // Read received data
+      |         ^~~~~~
+main.c(107): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  107 |         USART2_DR = BUFFER[i];                                                  // WRITE THE CHARACTER TO THE DATA REGISTER
+      |                     ^~~~~~
+main.c(117): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  117 |         USART2_DR = (uint32_t)(*str++);                 // WRITE THE CHARACTER TO THE DATA REGISTER
+      |                                 ^~~
+main.c(127): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  127 |         USART2_DR = (uint32_t)(*str++);                 // WRITE THE CHARACTER TO THE DATA REGISTER
+      |                                 ^~~
+16 warnings generated.
+compiling main.c...
+assembling startup_stm32f401xc.s...
+RTE/Device/STM32F401CCUx/system_stm32f4xx.c(263): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  263 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |         ^~~~~~~~~~~~~
+1 warning generated.
+compiling system_stm32f4xx.c...
+linking...
+Program Size: Code=3080 RO-data=420 RW-data=0 ZI-data=1632  
+FromELF: creating hex file...
+".\Objects\Rx.axf" - 0 Error(s), 17 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM::CMSIS@5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.1.pack
+                Keil::STM32F4xx_DFP@2.17.1
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_App
+  D:/x86/Keil_v5/Pack/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  D:/x86/Keil_v5/Pack/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@5.6.0
+
+   * Component: Keil::Device:Startup@2.6.3
+      Source file:   MDK/Device/Source/ARM/STM32F401xx_OPT.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xc.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
